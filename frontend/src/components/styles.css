@@ -1,0 +1,347 @@
+/* Base and Layout */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f2fdf2;
+  color: #335233;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  background-color: #d2f3cd;
+  display: grid;
+  grid-template-areas:
+    "sidebar topbar"
+    "sidebar main";
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 60px 1fr;
+  height: 100vh;
+  width: 100vw;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Sidebar Navigation */
+.bottom-nav {
+  grid-area: sidebar;
+  background-color: #2c6b2f;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 12px;
+  height: calc(100vh - 40px);
+  position: sticky;
+  top: 20px;
+  overflow-y: auto;
+}
+
+.bottom-nav-btn {
+  background-color: #2c6b2f;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 16px;
+  width: 100%;
+  text-align: left;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bottom-nav-btn:hover,
+.bottom-nav-btn.active {
+  background-color: #1b5e20;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+/* Topbar */
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c6b2f;
+  text-shadow: 1px 1px 2px #a1c4a1;
+}
+
+.app-header h1 {
+  font-size: 2.3rem;
+  margin: 0;
+  color: #2c6b2f;
+}
+
+.app-header p {
+  font-size: 1rem;
+  color: #385535;
+}
+
+/* Main Content Grid */
+.app-main {
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "dashboard map"
+    "notifications impact";
+  grid-template-columns: 2fr 1.5fr;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
+}
+
+.left-panel {
+  grid-area: dashboard;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.right-panel {
+  grid-area: map;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.panel-discover {
+  grid-area: map;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  overflow-y: auto;
+
+  /* Add these lines: */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;   /* Optional: limits how wide the panel gets */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notifications {
+  grid-area: notifications;
+}
+
+.impact-tracker {
+  grid-area: impact;
+}
+
+/* Form Inputs and Buttons */
+form,
+.surplus-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #b0d9a5;
+  border-radius: 8px;
+  background-color: #fbfdfb;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  display: block;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2c6b2f;
+  outline: none;
+  box-shadow: 0 0 8px #a8d18d88;
+}
+
+button,
+input[type="submit"],
+.bottom-nav-btn {
+  background-color: #2c6b2f;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.bottom-nav-btn:hover {
+  background-color: #1b5e20;
+  transform: translateY(-1px);
+}
+
+/* Form Container Styling */
+.surplus-form-container {
+  max-width: 400px;
+  margin: 0 auto 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Form Heading */
+.form-heading {
+  font-size: 1.5rem;
+  color: #2c6b2f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Register Button Specific */
+.register-btn {
+  background-color: #1b5e20;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  margin-left: 8px;
+  border-radius: 6px;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .app-container {
+    display: block;
+    padding: 20px;
+  }
+
+  .app-main {
+    grid-template-areas:
+      "dashboard"
+      "map"
+      "notifications"
+      "impact";
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-nav {
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .bottom-nav-btn {
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+/* Ensure all input fields are uniform */
+input[name="restaurant"],
+input[name="description"],
+input[name="address"],
+input[name="quantity"] {
+  border: 1.5px solid #b0d9a5;
+  border-radius: 8px;
+  background-color: #fbfdfb;
+  font-size: 1rem;
+  padding: 12px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Impact Tracker */
+
+.impact-tracker {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(44, 107, 47, 0.1);
+}
+
+.impact-tracker h2 {
+  margin-top: 0;
+  color: #2c6b2f;
+  font-size: 1.5rem;
+}
+
+.impact-tracker p {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: #385535;
+  font-weight: 700;
+}
+
+.progress-bar-bg {
+  background-color: #c2e0b3;
+  border-radius: 20px;
+  height: 24px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  background-color: #2c6b2f;
+  height: 100%;
+  width: 0%;
+  transition: width 0.6s ease;
+  border-radius: 20px 0 0 20px;
+  text-align: right;
+  color: white;
+  font-weight: 700;
+  padding-right: 10px;
+  line-height: 24px;
+}
+
+.impact-goal-msg {
+  margin-top: 12px;
+  color: #1d3e11;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.impact-panel {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(44, 107, 47, 0.1);
+  padding: 24px;
+
+}
+
+/*To Seperate Available Surplus and Impact Tracker*/
+
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
