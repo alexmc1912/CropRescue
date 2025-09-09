@@ -1,56 +1,53 @@
-Overview
+# CROPRESCUE
+Transforming Food Waste into Lasting Impact
 
-CropRescue is an open-source platform that addresses agricultural challenges by facilitating surplus food management and redistribution.
 
-It combines a React-based frontend with a Django backend, offering a full-stack solution designed for scalability and ease of development.
 
-Why CropRescue?
+## Overview
+CropRescue is an open-source platform that addresses agricultural challenges by facilitating surplus food management and redistribution. It combines a React-based frontend with a Django backend, offering a full-stack solution designed for scalability and ease of development.
 
-This project aims to streamline food donation workflows and promote sustainability.
+### Why CropRescue?
+This project aims to streamline food donation workflows and promote sustainability. The core features include:
 
-Core Features:
+- 🛠 **Role-based Authentication**: Secure user login with role management for donors, volunteers, and admins.
+- 🚀 **Modular Architecture**: Clear separation of frontend and backend components for maintainability and scalability.
+- 📊 **Impact Tracking**: Visualize collective contributions and progress toward food redistribution goals.
+- 🔔 **Real-time Notifications**: Keep users informed with transient alerts and updates.
+- 🌐 **Performance Monitoring**: Collect web vitals to optimize user experience and responsiveness.
 
-Role-based Authentication: Secure login with role management for donors, volunteers, and admins.
+---
 
-Modular Architecture: Clear separation of frontend and backend for scalability and maintainability.
+## Getting Started
 
-Impact Tracking: Visualize contributions and food redistribution goals.
+### Prerequisites
+This project requires the following dependencies:
+- Programming Language: JavaScript
+- Package Manager: npm
 
-Real-time Notifications: Keep users updated with alerts and messages.
+### Installation
+Build CropRescue from the source and install dependencies:
 
-Performance Monitoring: Collect web vitals to optimize user experience.
+```bash
+# Clone the repository
+git clone https://gitlab.computing.dcu.ie/mcswina2/intra-cbl-project.git)
 
-Getting Started
-Prerequisites
-
-Make sure you have the following installed:
-
-Programming Language: JavaScript
-
-Package Manager: npm
-
-Installation
-
-Clone the repository and install dependencies:
-
-# Clone the repo
-git clone https://github.com/alexmc1912/CropRescue
-
-# Navigate to project folder
+# Navigate to the project directory
 cd CropRescue
 
 # Install dependencies
 npm install
+```
 
-Usage
-
+### Usage
 Run the project with:
 
+```bash
 npm start
+```
 
-Testing
+### Testing
+CropRescue uses the {test_framework} test framework. Run the test suite with:
 
-CropRescue uses the {test_framework} test framework.
-Run the test suite with:
-
+```bash
 npm test
+```
